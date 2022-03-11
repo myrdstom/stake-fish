@@ -1,0 +1,8 @@
+export const columns = [
+  { id: "name", label: "Name", minWidth: 170 },
+  { id: "country", label: "Country", minWidth: 170 },
+  { id: "logo", label: "Logo", minWidth: 170 },
+  { id: "url", label: "Url", minWidth: 170 },
+  { id: "trust rank", label: "Rank", minWidth: 170 },
+  { id: "action", label: "Action", minWidth: 170 }
+];
