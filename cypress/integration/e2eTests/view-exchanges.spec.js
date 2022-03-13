@@ -7,8 +7,7 @@ describe("View Exchanges", () => {
       method: "GET",
       url: "https://api.coingecko.com/api/v3/**"
     }).as("nextPage");
-    cy.wait("@nextPage")
-      .get("[data-cy=exchanges]")
+    cy.get("[data-cy=exchanges]")
       .should("exist")
       .get("[data-cy=name]")
       .should("be.visible")
