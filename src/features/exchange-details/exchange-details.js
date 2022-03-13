@@ -48,8 +48,18 @@ const StyledTwitter = styled(TwitterIcon)`
 `;
 
 const ExchangeDetails = ({ exchangeDetails }) => {
-  const { name, country, trust_score_rank, facebook_url, reddit_url, twitter_handle, image, year_established, url } =
-    exchangeDetails;
+  const {
+    name,
+    country,
+    trust_score_rank,
+    facebook_url,
+    reddit_url,
+    twitter_handle,
+    image,
+    year_established,
+    url,
+    description
+  } = exchangeDetails;
   return (
     <StyledCard>
       <CardContent>
@@ -66,6 +76,12 @@ const ExchangeDetails = ({ exchangeDetails }) => {
         <Typography color="text.secondary" gutterBottom>
           Country: {country}
         </Typography>
+        {description ? (
+          <Typography color="text.secondary" gutterBottom>
+            Description: {description}
+          </Typography>
+        ) : null}
+
         <Typography color="text.secondary" gutterBottom>
           Website:{" "}
           <StyledAnchor target="_blank" href={url}>
