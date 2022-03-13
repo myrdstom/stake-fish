@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import DataTable from "./table";
+import DataTable from "../../components/table";
 
 const StyledBox = styled(Box)`
   display: flex;

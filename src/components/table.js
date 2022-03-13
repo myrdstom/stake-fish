@@ -16,7 +16,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { styled } from "@mui/material/styles";
-import { columns } from "../../constants/features/list-exchanges/table";
+import { columns } from "../constants/features/list-exchanges/table";
 
 const StyledBox = styled(Box)`
   display: flex;
@@ -79,11 +79,11 @@ const DataTable = ({ exchanges, onPageChange, page }) => (
             const { id, name, url, country, image, trust_score_rank } = exchange;
             return (
               <TableRow hover role="checkbox" tabIndex={-1} key={id}>
-                <TableCell data-cy="name">{name}</TableCell>
-                <TableCell>{country}</TableCell>
                 <TableCell>
                   <Img src={image} alt="Logo" />
                 </TableCell>
+                <TableCell data-cy="name">{name}</TableCell>
+                <TableCell>{country}</TableCell>
                 <TableCell>
                   <StyledAnchor target="_blank" href={url}>
                     {name}
