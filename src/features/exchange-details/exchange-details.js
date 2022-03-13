@@ -50,9 +50,6 @@ const StyledTwitter = styled(TwitterIcon)`
 function ExchangeDetails({ exchangeDetails }) {
   const { name, country, trust_score_rank, facebook_url, reddit_url, twitter_handle, image, year_established, url } =
     exchangeDetails;
-
-  // eslint-disable-next-line no-console
-  console.log(url, "the url =====>");
   return (
     <StyledCard>
       <CardContent>
