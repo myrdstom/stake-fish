@@ -6,7 +6,7 @@ import ExchangeDetails from "./exchange-details";
 import CustomButton from "../../components/button";
 import { section, pathname } from "../../constants/features/exchange-details/exchange-details";
 
-function ExchangeDetailsView() {
+const ExchangeDetailsView = () => {
   const { exchangeId } = useParams();
   const [exchangeDetails, setExchangeDetails] = useState({});
   const [loading, setLoading] = useState(false);
@@ -33,6 +33,6 @@ function ExchangeDetailsView() {
       {loading ? <>Loading....</> : <ExchangeDetails exchangeDetails={exchangeDetails} />}
     </Container>
   );
-}
+};
 
 export default ExchangeDetailsView;
