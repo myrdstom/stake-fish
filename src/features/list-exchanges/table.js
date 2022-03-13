@@ -38,6 +38,11 @@ const StyledLink = styled(NavLink)`
   color: #b3b7bd;
 `;
 
+const StyledAnchor = styled("a")`
+  text-decoration: none;
+  color: #b3b7bd;
+`;
+
 const Img = styled("img")`
   height: 20px;
 `;
@@ -72,7 +77,7 @@ function DataTable({ exchanges, onPageChange, page }) {
           </TableHead>
           <TableBody>
             {exchanges.map(exchange => {
-              const { id, name, url, country, image, trust_score } = exchange;
+              const { id, name, url, country, image, trust_score_rank } = exchange;
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={id}>
                   <TableCell data-cy="name">{name}</TableCell>
@@ -81,11 +86,15 @@ function DataTable({ exchanges, onPageChange, page }) {
                     <Img src={image} alt="Logo" />
                   </TableCell>
                   <TableCell>
-                    <StyledLink to={url}>{name}</StyledLink>
+                    <StyledAnchor target="_blank" href={url}>
+                      {name}
+                    </StyledAnchor>
                   </TableCell>
-                  <TableCell>{trust_score}</TableCell>
+                  <TableCell>{trust_score_rank}</TableCell>
                   <StyledTableCell>
-                    <VisibilityIcon />
+                    <StyledLink to={`/${id}`} target="_blank" rel="noopener noreferrer" data-cy="exchange-details">
+                      <VisibilityIcon />
+                    </StyledLink>
                   </StyledTableCell>
                 </TableRow>
               );
