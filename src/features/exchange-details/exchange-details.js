@@ -47,7 +47,7 @@ const StyledTwitter = styled(TwitterIcon)`
   color: #1d9cf0;
 `;
 
-function ExchangeDetails({ exchangeDetails }) {
+const ExchangeDetails = ({ exchangeDetails }) => {
   const { name, country, trust_score_rank, facebook_url, reddit_url, twitter_handle, image, year_established, url } =
     exchangeDetails;
   return (
@@ -87,6 +87,6 @@ function ExchangeDetails({ exchangeDetails }) {
       </CardContent>
     </StyledCard>
   );
-}
+};
 
 export default ExchangeDetails;

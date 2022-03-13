@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getExchanges } from "../../api/exchanges";
 import Exchanges from "./exchanges";
 
-function ExchangesView() {
+const ExchangesView = () => {
   const [exchanges, setExchanges] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = React.useState(1);
@@ -39,6 +39,6 @@ function ExchangesView() {
     }
   };
   return <Exchanges exchanges={exchanges} onPageChange={onPageChange} loading={loading} page={page} error={error} />;
-}
+};
 
 export default ExchangesView;

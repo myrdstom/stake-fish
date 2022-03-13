@@ -9,21 +9,19 @@ const StyledBox = styled(Box)`
   margin: 10px 0 20px 0;
 `;
 
-function Exchanges({ exchanges, page, onPageChange, error, loading }) {
-  return (
-    <Container fixed data-cy="exchanges">
-      <StyledBox>
-        <Typography variant="h2">
-          <em>Stake Gekko</em>
-        </Typography>
-      </StyledBox>
-      <StyledBox>
-        <Typography variant="h4">Checkout our amazing Exchange</Typography>
-      </StyledBox>
+const Exchanges = ({ exchanges, page, onPageChange, error, loading }) => (
+  <Container fixed data-cy="exchanges">
+    <StyledBox>
+      <Typography variant="h2">
+        <em>Stake Gekko</em>
+      </Typography>
+    </StyledBox>
+    <StyledBox>
+      <Typography variant="h4">Checkout our amazing Exchange</Typography>
+    </StyledBox>
 
-      <DataTable onPageChange={onPageChange} page={page} exchanges={exchanges} error={error} loading={loading} />
-    </Container>
-  );
-}
+    <DataTable onPageChange={onPageChange} page={page} exchanges={exchanges} error={error} loading={loading} />
+  </Container>
+);
 
 export default Exchanges;

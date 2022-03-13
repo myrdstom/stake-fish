@@ -4,7 +4,7 @@ import { Button, Box } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { styled } from "@mui/material/styles";
 
-function CustomButton({ pathname, section }) {
+const CustomButton = ({ pathname, section }) => {
   const StyledBox = styled(Box)`
     display: inline-block;
     margin: 30px 0;
@@ -45,6 +45,6 @@ function CustomButton({ pathname, section }) {
       </StyledLink>
     </StyledBox>
   );
-}
+};
 
 export default CustomButton;

@@ -61,59 +61,57 @@ const ArrowForward = styled(ArrowForwardIosIcon)`
   height: 10px;
 `;
 
-function DataTable({ exchanges, onPageChange, page }) {
-  return (
-    <Paper sx={{ width: "100%", overflow: "hidden" }}>
-      <TableContainer sx={{ maxHeight: 700 }}>
-        <Table stickyHeader aria-label="sticky table">
-          <TableHead>
-            <TableRow>
-              {columns.map(column => (
-                <StyledTableCellHeader key={column.id} align={column.align} style={{ minWidth: column.minWidth }}>
-                  {column.label}
-                </StyledTableCellHeader>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {exchanges.map(exchange => {
-              const { id, name, url, country, image, trust_score_rank } = exchange;
-              return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={id}>
-                  <TableCell data-cy="name">{name}</TableCell>
-                  <TableCell>{country}</TableCell>
-                  <TableCell>
-                    <Img src={image} alt="Logo" />
-                  </TableCell>
-                  <TableCell>
-                    <StyledAnchor target="_blank" href={url}>
-                      {name}
-                    </StyledAnchor>
-                  </TableCell>
-                  <TableCell>{trust_score_rank}</TableCell>
-                  <StyledTableCell>
-                    <StyledLink to={`/${id}`} target="_blank" rel="noopener noreferrer" data-cy="exchange-details">
-                      <VisibilityIcon />
-                    </StyledLink>
-                  </StyledTableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <StyledBox>
-        <IconButton>
-          <ArrowBack onClick={() => onPageChange(page - 1)} />
-        </IconButton>
+const DataTable = ({ exchanges, onPageChange, page }) => (
+  <Paper sx={{ width: "100%", overflow: "hidden" }}>
+    <TableContainer sx={{ maxHeight: 700 }}>
+      <Table stickyHeader aria-label="sticky table">
+        <TableHead>
+          <TableRow>
+            {columns.map(column => (
+              <StyledTableCellHeader key={column.id} align={column.align} style={{ minWidth: column.minWidth }}>
+                {column.label}
+              </StyledTableCellHeader>
+            ))}
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {exchanges.map(exchange => {
+            const { id, name, url, country, image, trust_score_rank } = exchange;
+            return (
+              <TableRow hover role="checkbox" tabIndex={-1} key={id}>
+                <TableCell data-cy="name">{name}</TableCell>
+                <TableCell>{country}</TableCell>
+                <TableCell>
+                  <Img src={image} alt="Logo" />
+                </TableCell>
+                <TableCell>
+                  <StyledAnchor target="_blank" href={url}>
+                    {name}
+                  </StyledAnchor>
+                </TableCell>
+                <TableCell>{trust_score_rank}</TableCell>
+                <StyledTableCell>
+                  <StyledLink to={`/${id}`} target="_blank" rel="noopener noreferrer" data-cy="exchange-details">
+                    <VisibilityIcon />
+                  </StyledLink>
+                </StyledTableCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
+    </TableContainer>
+    <StyledBox>
+      <IconButton>
+        <ArrowBack onClick={() => onPageChange(page - 1)} />
+      </IconButton>
 
-        <StyledTypography data-cy="page">{page}</StyledTypography>
-        <IconButton>
-          <ArrowForward onClick={() => onPageChange(page + 1)} data-cy="next-page" />
-        </IconButton>
-      </StyledBox>
-    </Paper>
-  );
-}
+      <StyledTypography data-cy="page">{page}</StyledTypography>
+      <IconButton>
+        <ArrowForward onClick={() => onPageChange(page + 1)} data-cy="next-page" />
+      </IconButton>
+    </StyledBox>
+  </Paper>
+);
 
 export default DataTable;
