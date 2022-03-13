@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Container } from "@mui/material";
 import { getExchange } from "../../api/exchanges";
-import ExchangeDetails from "./ExchangeDetails";
+import ExchangeDetails from "./exchange-details";
 import CustomButton from "../../components/button";
 import { section, pathname } from "../../constants/features/exchange-details/exchange-details";
 
