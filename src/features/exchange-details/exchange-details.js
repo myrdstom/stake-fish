@@ -56,7 +56,7 @@ function ExchangeDetails({ exchangeDetails }) {
         <StyledBox>
           <Img src={image} alt="Logo" />
         </StyledBox>
-        <Typography color="text.secondary" gutterBottom>
+        <Typography color="text.secondary" gutterBottom data-cy="exchange-name">
           Exchange: {name}
         </Typography>
         <Typography color="text.secondary" gutterBottom>

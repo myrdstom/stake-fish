@@ -92,7 +92,7 @@ function DataTable({ exchanges, onPageChange, page }) {
                   </TableCell>
                   <TableCell>{trust_score_rank}</TableCell>
                   <StyledTableCell>
-                    <StyledLink to={`/${id}`} target="_blank" rel="noopener noreferrer">
+                    <StyledLink to={`/${id}`} target="_blank" rel="noopener noreferrer" data-cy="exchange-details">
                       <VisibilityIcon />
                     </StyledLink>
                   </StyledTableCell>
